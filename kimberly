@@ -1,0 +1,12 @@
+// Ejemplo de función para dibujar un solo píxel en una imagen
+
+void drawPixel(Image* image, int x, int y, Color color) {
+    if (x >= 0 && x < image->width() && y >= 0 && y < image->height()) {
+        image->putPixel(x, y, color);
+    }
+}class PixelTool : public Tool {
+public:
+    void onMouseDown(Image* image, int x, int y, Color color) override {
+        drawPixel(image, x, y, color);
+    }
+};
